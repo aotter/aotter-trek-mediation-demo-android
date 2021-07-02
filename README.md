@@ -19,7 +19,7 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 ## Trek MoPub Mediation Example App Demo
 
 ### Trek MoPub Mediation Document
-https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation-beta
+https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation
 
 ### Trek MoPub Mediation release change log
 - 2021/07/01 release - Mediation `4.1.1`
