@@ -1,4 +1,4 @@
-# aotter-mediation-android-kotlin-demo
+# Mediation Example Demo
 Mediation Exapmle Demo
 
 ## Trek Admob Mediation Example App Demo
