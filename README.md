@@ -1,8 +1,7 @@
 # aotter-mediation-android-kotlin-demo
 Mediation Exapmle Demo
 
-## aotter-trek-admob-mediation-android-kotlin-demo
-Trek Admob SDK Example App Demo
+## Trek Admob SDK Example App Demo
 
 ### Trek Admob SDK Document
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
@@ -17,8 +16,7 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
     - Add Supr.Ad sample code
     - Add Banner Ad sample code
 
-## aotter-trek-mopub-mediation-android-kotlin-demo
-Trek MoPub SDK Example App Demo
+## Trek MoPub SDK Example App Demo
 
 ### Trek MoPub SDK SDK Document
 https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation-beta
