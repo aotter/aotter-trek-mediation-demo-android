@@ -1,14 +1,14 @@
 # Mediation Example Demo
 Mediation Exapmle Demo
 
-## Trek Admob Mediation Example App Demo
+## Trek AdMob Mediation Example App Demo
 
-### Trek Admob Mediation Document
+### Trek AdMob Mediation Document
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
-### Trek Admob Mediation release change log
+### Trek AdMob Mediation release change log
 - 2021/07/01 release - Mediation `4.1.3`
-     - New released Trek Admob Mediation
+     - New released Trek AdMob Mediation
 
 ### Demo release change log
 - 2021/07/01 
