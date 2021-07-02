@@ -1,0 +1,4 @@
+rootProject.name = "aotter-mediation-android-kotlin-demo"
+include ':app'
+include ':admob'
+include ':mopub'
