@@ -7,6 +7,9 @@ Mediation Exapmle Demo
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
+- 2021/07/01 release - Mediation `4.1.4`
+     - Optimize adData
+     - Adjust TrekMediaView lifecycle
 - 2021/07/01 release - Mediation `4.1.3`
      - New released Trek AdMob Mediation
 
@@ -22,6 +25,9 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation
 
 ### Trek MoPub Mediation release change log
+- 2021/07/01 release - Mediation `4.1.2`
+     - Optimize adData
+     - Adjust TrekMediaView lifecycle
 - 2021/07/01 release - Mediation `4.1.1`
      - New released Trek MoPub Mediation
 
