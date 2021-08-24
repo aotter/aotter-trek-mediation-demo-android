@@ -15,7 +15,7 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
      - Add sdkVersion
      - Add mediationVersion
      - Optimization proguard
-- 2021/07/01 release - Mediation `4.1.4`
+- 2021/07/16 release - Mediation `4.1.4`
      - Optimize adData
      - Adjust TrekMediaView lifecycle
 - 2021/07/01 release - Mediation `4.1.3`
@@ -41,7 +41,7 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation
      - Add sdkVersion
      - Add mediationVersion
      - Optimization proguard
-- 2021/07/01 release - Mediation `4.1.2`
+- 2021/07/16 release - Mediation `4.1.2`
      - Optimize adData
      - Adjust TrekMediaView lifecycle
 - 2021/07/01 release - Mediation `4.1.1`
