@@ -31,7 +31,7 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation
 
 ### Trek MoPub Mediation release change log
-- 2021/08/24 release - Mediation `4.1.3`
+- 2021/08/24 release - Mediation `4.1.4`
      - TrekMediaView default height
      - Defindes key of jsonObject
      - Add sdkVersion
