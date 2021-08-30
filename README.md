@@ -7,6 +7,8 @@ Mediation Exapmle Demo
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
+- 2021/08/30 release - Mediation `4.1.7`
+     - remove supr.ad third imp
 - 2021/08/24 release - Mediation `4.1.6`
      - TrekMediaView default height
      - Defindes key of jsonObject
@@ -31,6 +33,8 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation
 
 ### Trek MoPub Mediation release change log
+- 2021/08/30 release - Mediation `4.1.5`
+     - remove supr.ad third imp
 - 2021/08/24 release - Mediation `4.1.4`
      - TrekMediaView default height
      - Defindes key of jsonObject
