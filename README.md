@@ -7,6 +7,8 @@ Mediation Exapmle Demo
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
+- 2021/08/31 release - Mediation `4.1.8`
+     - remove unneeded permission 
 - 2021/08/30 release - Mediation `4.1.7`
      - remove supr.ad third imp
 - 2021/08/24 release - Mediation `4.1.6`
@@ -33,6 +35,8 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation
 
 ### Trek MoPub Mediation release change log
+- 2021/08/31 release - Mediation `4.1.6`
+     - remove unneeded permission 
 - 2021/08/30 release - Mediation `4.1.5`
      - remove supr.ad third imp
 - 2021/08/24 release - Mediation `4.1.4`
