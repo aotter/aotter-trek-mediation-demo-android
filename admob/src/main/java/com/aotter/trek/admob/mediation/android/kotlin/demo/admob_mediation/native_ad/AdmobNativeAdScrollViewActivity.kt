@@ -61,7 +61,7 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
                 viewBinding.Sponsored.text = nativeAd.advertiser
                 viewBinding.Sponsored.setOnClickListener {
-                    Log.e("dsdas", "dsadsa")
+                    Log.e("Sponsored", "Sponsored Click")
                 }
                 viewBinding.admobAdTitle.text = nativeAd.body
 //
