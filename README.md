@@ -8,9 +8,7 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
 - 2021/09/13 release - Mediation `4.1.9`
-     - Fix VTR 
-     - Fix CTR
-     - Fix Imp
+     - Optimize impression/VTR/CTR
      - Adjust TrekMediaView lifecycle
      - Adjsut TrekMediaView play video when visibility is 50% or more
      - New TrekBannerView
@@ -43,9 +41,7 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation
 
 ### Trek MoPub Mediation release change log
 - 2021/09/13 release - Mediation `4.1.7`
-     - Fix VTR 
-     - Fix CTR
-     - Fix Imp
+     - Optimize impression/VTR/CTR
      - Adjust TrekMediaView lifecycle
      - Adjsut TrekMediaView play video when visibility is 50% or more
      - New TrekBannerView
