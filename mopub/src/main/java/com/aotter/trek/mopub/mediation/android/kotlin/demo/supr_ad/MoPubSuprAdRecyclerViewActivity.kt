@@ -79,6 +79,7 @@ class MoPubSuprAdRecyclerViewActivity : AppCompatActivity() {
         MoPub.initializeSdk(this, sdkConfiguration, initSdkListener())
 
         val trekMoPubViewBinder = TrekMoPubViewBinder().Builder(R.layout.item_trek_media_view)
+            .adContainerViewId(R.id.adContainer)
             .trekMoPubMediaViewId(R.id.trekMoPubMediaView)
             .build()
 

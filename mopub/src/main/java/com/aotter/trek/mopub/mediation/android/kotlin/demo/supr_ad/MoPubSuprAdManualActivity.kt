@@ -50,6 +50,7 @@ class MoPubSuprAdManualActivity : AppCompatActivity() {
         moPubNative.setLocalExtras(hasMap)
 
         val trekMoPubViewBinder = TrekMoPubViewBinder().Builder(R.layout.item_trek_media_view)
+            .adContainerViewId(R.id.adContainer)
             .trekMoPubMediaViewId(R.id.trekMoPubMediaView)
             .build()
 
