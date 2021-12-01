@@ -7,6 +7,13 @@ Mediation Exapmle Demo
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
+- 2021/12/01 release - Mediation `4.2.1`
+     - support android 12
+     - support kotlin version 1.5.31
+     - update exoplayer
+     - adjust impression tool
+     - adjust third click event flow
+     - fix banner ad、supr.ad impression event
 - 2021/09/27 release - Mediation `4.2.0`
      - Adjust om impressionType
 - 2021/09/13 release - Mediation `4.1.9`
@@ -42,6 +49,13 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 https://trek.gitbook.io/aottertrek-sdk-doc/android/mopub-mediation
 
 ### Trek MoPub Mediation release change log
+- 2021/12/01 release - Mediation `4.1.9`
+     - support android 12
+     - support kotlin version 1.5.31
+     - update exoplayer
+     - adjust impression tool
+     - adjust third click event flow
+     - fix banner ad、supr.ad impression event
 - 2021/09/27 release - Mediation `4.1.8`
      - Adjust om impressionType
 - 2021/09/13 release - Mediation `4.1.7`
