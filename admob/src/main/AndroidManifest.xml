@@ -21,7 +21,9 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8836593984677243~2250388465" />
 
-        <activity android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.MainActivity">
+        <activity
+            android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
