@@ -1,4 +1,4 @@
-package com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.native_ad
+package com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.admob_mediation.native_ad
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.admob.mediation.kotlin.AdData
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
+import com.aotter.trek.admob.mediation.android.kotlin.demo.AdmobApplication
 import com.aotter.trek.admob.mediation.android.kotlin.demo.LocalNativeAdData
 import com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.AdmobNativeAdAdapter
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityNativeAdRecyclerviewPageBinding
@@ -285,7 +286,7 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/1855351388"
 
-        val adLoader = AdLoader.Builder(this, adUnit)
+        val adLoader = AdLoader.Builder(AdmobApplication.context, adUnit)
             .forNativeAd { nativeAd ->
 
                 val adData =
@@ -341,7 +342,7 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/1855351388"
 
-        val adLoader = AdLoader.Builder(this, adUnit)
+        val adLoader = AdLoader.Builder(AdmobApplication.context, adUnit)
             .forNativeAd { nativeAd ->
 
                 val adData =

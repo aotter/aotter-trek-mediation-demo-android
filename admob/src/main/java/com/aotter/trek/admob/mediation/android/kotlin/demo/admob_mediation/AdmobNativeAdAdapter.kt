@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
 import com.aotter.trek.admob.mediation.android.kotlin.demo.LocalNativeAdData
-import com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.native_ad.OnAdmobNativeAdViewRegisteredListener
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
@@ -18,13 +17,6 @@ class AdmobNativeAdAdapter() : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHol
 
     private var list = mutableListOf<LocalNativeAdData>()
 
-    private var onAdmobNativeAdViewRegisteredListener: OnAdmobNativeAdViewRegisteredListener? = null
-
-    fun setOnAdmobNativeAdViewRegisteredListener(onAdmobNativeAdViewRegisteredListener: OnAdmobNativeAdViewRegisteredListener) {
-
-        this.onAdmobNativeAdViewRegisteredListener = onAdmobNativeAdViewRegisteredListener
-
-    }
 
     fun update(list: MutableList<LocalNativeAdData>) {
 

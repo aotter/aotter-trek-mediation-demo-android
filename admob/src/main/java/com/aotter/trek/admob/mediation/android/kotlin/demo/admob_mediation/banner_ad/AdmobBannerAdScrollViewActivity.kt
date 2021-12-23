@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventBanner
+import com.aotter.trek.admob.mediation.android.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobBannerAdScrollViewBinding
 import com.google.android.gms.ads.*
 
@@ -25,7 +26,7 @@ class AdmobBannerAdScrollViewActivity : AppCompatActivity() {
 
     private fun loadBannerAd() {
 
-        val bannerAdView = AdView(this)
+        val bannerAdView = AdView(AdmobApplication.context)
 
         bannerAdView.adSize = AdSize.BANNER
 

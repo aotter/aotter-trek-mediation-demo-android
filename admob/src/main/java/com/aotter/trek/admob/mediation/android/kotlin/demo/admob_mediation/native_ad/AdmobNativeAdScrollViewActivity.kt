@@ -7,6 +7,7 @@ import com.admob.mediation.kotlin.AdData
 import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
+import com.aotter.trek.admob.mediation.android.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobNativeAdScrollViewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
@@ -56,13 +57,11 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/1855351388"
 
-        adLoader = AdLoader.Builder(this, adUnit)
+        adLoader = AdLoader.Builder(AdmobApplication.context, adUnit)
             .forNativeAd { nativeAd ->
 
                 viewBinding.Sponsored.text = nativeAd.advertiser
-                viewBinding.Sponsored.setOnClickListener {
-                    Log.e("Sponsored", "Sponsored Click")
-                }
+
                 viewBinding.admobAdTitle.text = nativeAd.body
 //
                 Glide.with(this)
@@ -116,7 +115,7 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/1855351388"
 
-        adLoader2 = AdLoader.Builder(this, adUnit)
+        adLoader2 = AdLoader.Builder(AdmobApplication.context, adUnit)
             .forNativeAd { nativeAd ->
 
                 viewBinding.Sponsored2.text = nativeAd.advertiser

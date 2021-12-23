@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
-import com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.supr_ad.OnAdmobSuprAdViewRegisteredListener
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
@@ -17,8 +16,6 @@ import com.google.android.gms.ads.nativead.NativeAdView
 class AdmobSuprAdAdapter() : RecyclerView.Adapter<AdmobSuprAdAdapter.ViewHolder>() {
 
     private var list = mutableListOf<LocalAdmobSuprAdData>()
-
-    private var onAdmobSuprAdViewRegisteredListener: OnAdmobSuprAdViewRegisteredListener? = null
 
     fun update(list: MutableList<LocalAdmobSuprAdData>) {
 
