@@ -7,6 +7,8 @@ Mediation Exapmle Demo
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
+- 2021/12/23 release - Mediation `4.2.2`
+     - Use Activity page instead of DialogFragment page when context came from application
 - 2021/12/01 release - Mediation `4.2.1`
      - support android 12
      - support kotlin version 1.5.31
