@@ -1,4 +1,4 @@
-package com.aotter.trek.admob.mediation.android.kotlin.demo
+package com.aotter.trek.sdk.android.admob.mediation.kotlin.demo
 
 import android.app.Application
 

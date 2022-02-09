@@ -1,13 +1,14 @@
-package com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.banner_ad
+package com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.admob_mediation.banner_ad
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventBanner
-import com.aotter.trek.admob.mediation.android.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobBannerAdScrollViewBinding
-import com.google.android.gms.ads.*
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
 
 class AdmobBannerAdScrollViewActivity : AppCompatActivity() {
 
@@ -26,19 +27,11 @@ class AdmobBannerAdScrollViewActivity : AppCompatActivity() {
 
     private fun loadBannerAd() {
 
-        val bannerAdView = AdView(AdmobApplication.context)
-
-        bannerAdView.adSize = AdSize.BANNER
-
-        bannerAdView.adUnitId = "ca-app-pub-8836593984677243/2093351036"
-
-        bannerAdView.adListener = object : AdListener() {
+        viewBinding.bannerAdView.adListener = object : AdListener() {
             override fun onAdLoaded() {
                 super.onAdLoaded()
 
                 Log.e("Banner Ad", "onAdLoaded")
-
-                viewBinding.linearLayout.addView(bannerAdView)
 
             }
 
@@ -57,7 +50,7 @@ class AdmobBannerAdScrollViewActivity : AppCompatActivity() {
             .addCustomEventExtrasBundle(TrekAdmobCustomEventBanner::class.java, bundle)
             .build()
 
-        bannerAdView.loadAd(adRequest)
+        viewBinding.bannerAdView.loadAd(adRequest)
 
     }
 

@@ -1,13 +1,12 @@
-package com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.native_ad
+package com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.admob_mediation.native_ad
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.admob.mediation.kotlin.AdData
-import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
-import com.aotter.trek.admob.mediation.android.kotlin.demo.AdmobApplication
+import com.aotter.net.dto.trek.response.TrekNativeAd
+import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobNativeAdScrollViewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
@@ -28,6 +27,10 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
     private lateinit var adRequest2: AdRequest
 
+    private lateinit var adLoader3: AdLoader
+
+    private lateinit var adRequest3: AdRequest
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,47 +38,35 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         setContentView(viewBinding.root)
 
-        initView()
-
         loadAdmobNativeAd()
 
         loadAdmobNativeAd2()
 
-    }
-
-    private fun initView() {
-
-        viewBinding.refreshBtn.setOnClickListener {
-            adLoader.loadAd(adRequest)
-            adLoader2.loadAd(adRequest2)
-        }
+        loadAdmobNativeAd3()
 
     }
-
 
     private fun loadAdmobNativeAd() {
 
-        val adUnit = "ca-app-pub-8836593984677243/1855351388"
+        val adUnit = "ca-app-pub-8836593984677243/4613662079"
 
         adLoader = AdLoader.Builder(AdmobApplication.context, adUnit)
             .forNativeAd { nativeAd ->
 
-                viewBinding.Sponsored.text = nativeAd.advertiser
+                val trekNativeAd =
+                    nativeAd.extras.getSerializable(TrekAdmobDataKey.TREK_NATIVE_AD) as? TrekNativeAd
 
-                viewBinding.admobAdTitle.text = nativeAd.body
-//
-                Glide.with(this)
-                    .load(nativeAd.icon?.uri ?: "")
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .into(viewBinding.admobAdImg)
+                trekNativeAd?.let {
 
-                viewBinding.admobNativeAdView.setNativeAd(nativeAd)
+                    viewBinding.advertiser4.text = it.advertiserName
 
-                nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA)?.let {
-                    val adData = it as AdData
-                    TrekAdmobAdViewBinder.bindingAdView(adData, viewBinding.admobNativeAdView)
+                    viewBinding.adTitle4.text = it.title
+
+                    viewBinding.trekNativeAdView3.setTrekMediaView(viewBinding.trekMediaView)
+
+                    viewBinding.trekNativeAdView3.setNativeAd(it)
+
                 }
-
 
             }
             .withAdListener(object : AdListener() {
@@ -118,22 +109,22 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
         adLoader2 = AdLoader.Builder(AdmobApplication.context, adUnit)
             .forNativeAd { nativeAd ->
 
-                viewBinding.Sponsored2.text = nativeAd.advertiser
+                val trekNativeAd =
+                    nativeAd.extras.getSerializable(TrekAdmobDataKey.TREK_NATIVE_AD) as? TrekNativeAd
 
-                viewBinding.admobAdTitle2.text = nativeAd.body
+                trekNativeAd?.let {
 
-                Glide.with(this)
-                    .load(nativeAd.icon?.uri ?: "")
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .into(viewBinding.admobAdImg2)
+                    viewBinding.advertiser2.text = it.advertiserName
 
-                viewBinding.admobNativeAdView2.setNativeAd(nativeAd)
+                    viewBinding.adTitle2.text = it.title
 
-                val adData =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA) as? AdData
+                    Glide.with(this)
+                        .load(it.imgMain)
+                        .transition(DrawableTransitionOptions.withCrossFade())
+                        .into(viewBinding.adImg2)
 
-                adData?.let {
-                    TrekAdmobAdViewBinder.bindingAdView(it, viewBinding.admobNativeAdView2)
+                    viewBinding.trekNativeAdView.setNativeAd(it)
+
                 }
 
             }
@@ -167,6 +158,65 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
             .build()
 
         adLoader2.loadAd(adRequest2)
+
+    }
+
+    private fun loadAdmobNativeAd3() {
+
+        val adUnit = "ca-app-pub-8836593984677243/1855351388"
+
+        adLoader3 = AdLoader.Builder(AdmobApplication.context, adUnit)
+            .forNativeAd { nativeAd ->
+
+                val trekNativeAd =
+                    nativeAd.extras.getSerializable(TrekAdmobDataKey.TREK_NATIVE_AD) as? TrekNativeAd
+
+                trekNativeAd?.let {
+
+                    viewBinding.advertiser3.text = it.advertiserName
+
+                    viewBinding.adTitle3.text = it.title
+
+                    Glide.with(this)
+                        .load(it.imgMain)
+                        .transition(DrawableTransitionOptions.withCrossFade())
+                        .into(viewBinding.adImg3)
+
+                    viewBinding.trekNativeAdView2.setNativeAd(it)
+
+                }
+
+            }
+            .withAdListener(object : AdListener() {
+                override fun onAdClicked() {
+                    super.onAdClicked()
+                    Log.e("adLoader", "onAdClicked2")
+                }
+
+                override fun onAdImpression() {
+                    super.onAdImpression()
+
+                    Log.e("adLoader", "onAdImpression2")
+
+                }
+
+                override fun onAdLoaded() {
+                    super.onAdLoaded()
+                    Log.e("adLoader", "onAdLoaded2")
+                }
+            })
+            .build()
+
+        val bundle = Bundle()
+
+        bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+
+        adRequest3 = AdRequest
+            .Builder()
+            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .build()
+
+        adLoader3.loadAd(adRequest3)
 
     }
 

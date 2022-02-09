@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.aotter.trek.admob.mediation.android.kotlin.demo.MainActivity">
+    tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -54,32 +54,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="NativeAdRecyclerViewPage"
-                    android:textAllCaps="false" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Supr AD"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/admobSuprAdScrollPageBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="MediaAdScrollPage"
-                    android:textAllCaps="false" />
-
-                <Button
-                    android:id="@+id/admobSuprAdRecyclerViewBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="16dp"
-                    android:text="MediaAdRecyclerViewPagePage"
                     android:textAllCaps="false" />
 
                 <TextView

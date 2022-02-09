@@ -1,13 +1,11 @@
-package com.aotter.trek.admob.mediation.android.kotlin.demo
+package com.aotter.trek.sdk.android.admob.mediation.kotlin.demo
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.banner_ad.AdmobBannerAdScrollViewActivity
-import com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.native_ad.AdmobNativeAdScrollViewActivity
-import com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.supr_ad.AdmobSuprAdRecyclerViewPageActivity
-import com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.supr_ad.AdmobSuprAdScrollViewActivity
+import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.admob_mediation.banner_ad.AdmobBannerAdScrollViewActivity
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.admob_mediation.native_ad.AdmobNativeAdRecyclerViewPageActivity
+import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.admob_mediation.native_ad.AdmobNativeAdScrollViewActivity
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityMainBinding
 import com.google.android.gms.ads.MobileAds
 
@@ -45,18 +43,6 @@ class MainActivity : AppCompatActivity() {
         viewBinding.admobNativeAdRecyclerViewBtn.setOnClickListener {
             val intent = Intent()
             intent.setClass(this, AdmobNativeAdRecyclerViewPageActivity::class.java)
-            startActivity(intent)
-        }
-
-        viewBinding.admobSuprAdScrollPageBtn.setOnClickListener {
-            val intent = Intent()
-            intent.setClass(this, AdmobSuprAdScrollViewActivity::class.java)
-            startActivity(intent)
-        }
-
-        viewBinding.admobSuprAdRecyclerViewBtn.setOnClickListener {
-            val intent = Intent()
-            intent.setClass(this, AdmobSuprAdRecyclerViewPageActivity::class.java)
             startActivity(intent)
         }
 
