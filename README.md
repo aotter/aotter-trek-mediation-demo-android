@@ -7,6 +7,13 @@ Mediation Exapmle Demo
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
+- 2022/03/22 release - Mediation `4.4.0`
+     - change domain
+     - support om json tag
+     - support om js string dynamic update
+     - support webview slide
+     - improve BackgroundHolder setting
+     - update ExoPlayer
 - 2021/12/23 release - Mediation `4.2.2`
      - Use Activity page instead of DialogFragment page when context came from application
 - 2021/12/01 release - Mediation `4.2.1`
