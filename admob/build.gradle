@@ -53,7 +53,7 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-ads:20.5.0'
 
-    implementation 'com.aotter.net:trek-sdk-android-admob-mediation-kotlin:4.2.9_beta'
+    implementation 'com.aotter.net:trek-sdk-android-admob-mediation-kotlin:5.1.5_beta'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
