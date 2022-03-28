@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AotterTrekAdmobDemo">
         <activity android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.banner_ad.AdmobBannerAdScrollViewActivity" />
         <activity android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.native_ad.AdmobNativeAdScrollViewActivity" />
-        <activity android:name=".admob_mediation.native_ad.AdmobNativeAdRecyclerViewPageActivity" />
+        <activity android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.native_ad.AdmobNativeAdRecyclerViewPageActivity" />
         <activity android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.supr_ad.AdmobSuprAdScrollViewActivity" />
         <activity android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.supr_ad.AdmobSuprAdRecyclerViewPageActivity" />
 

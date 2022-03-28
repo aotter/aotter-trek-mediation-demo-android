@@ -6,6 +6,5 @@ data class LocalNativeAdData(
     val title: String,
     val advertiser: String,
     val img: String,
-    val adData: AdData? = null,
-    val isAd: Boolean = false
+    val adData: AdData? = null
 )

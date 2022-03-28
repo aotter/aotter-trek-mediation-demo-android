@@ -17,7 +17,6 @@ class AdmobNativeAdAdapter() : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHol
 
     private var list = mutableListOf<LocalNativeAdData>()
 
-
     fun update(list: MutableList<LocalNativeAdData>) {
 
         this.list = list
@@ -35,11 +34,13 @@ class AdmobNativeAdAdapter() : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHol
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (list[position].isAd) {
+
+        return list[position].adData?.let {
             0
-        } else {
+        } ?: kotlin.run {
             1
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

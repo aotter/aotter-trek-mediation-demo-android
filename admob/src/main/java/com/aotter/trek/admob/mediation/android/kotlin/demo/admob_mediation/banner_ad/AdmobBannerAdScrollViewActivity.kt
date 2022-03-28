@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventBanner
-import com.aotter.trek.admob.mediation.android.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobBannerAdScrollViewBinding
 import com.google.android.gms.ads.*
 
@@ -26,7 +25,7 @@ class AdmobBannerAdScrollViewActivity : AppCompatActivity() {
 
     private fun loadBannerAd() {
 
-        val bannerAdView = AdView(AdmobApplication.context)
+        val bannerAdView = AdView(this)
 
         bannerAdView.adSize = AdSize.BANNER
 
@@ -51,6 +50,8 @@ class AdmobBannerAdScrollViewActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         val adRequest = AdRequest
             .Builder()
