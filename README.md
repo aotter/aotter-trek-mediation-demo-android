@@ -8,10 +8,10 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
 - 2022/03/28 release - Mediation `4.4.2`
-     - Add setContentUrl() & setContentTitle()
+     - Add `setContentUrl()` & `setContentTitle()`
      - OMSDK obstruction minor adjustment
      - Add OMSDK contentUrl and customRefencData
-     - Admob mediation `hasVideoContent`
+     - Mapping Admob mediation `hasVideoContent` parameter
 - 2022/03/22 release - Mediation `4.4.0`
      - Change domain
      - Support om json tag
