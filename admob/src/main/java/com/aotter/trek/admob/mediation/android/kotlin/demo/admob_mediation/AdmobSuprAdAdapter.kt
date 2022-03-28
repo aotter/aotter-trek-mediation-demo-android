@@ -90,24 +90,27 @@ class AdmobSuprAdAdapter() : RecyclerView.Adapter<AdmobSuprAdAdapter.ViewHolder>
         fun bind(item: LocalAdmobSuprAdData) {
 
             item.nativeAd?.let { nativeAd ->
+
                 nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA)?.let {
                     val adData = it as AdData
                     TrekAdmobAdViewBinder.bindingAdView(adData, admobNativeAdView)
-                    admobNativeAdView.mediaView = admobMediaview
-                    admobNativeAdView.setNativeAd(nativeAd)
                 }
-            } ?: kotlin.run {
 
-                advertiser.text = item.advertiser
+                admobNativeAdView.mediaView = admobMediaview
 
-                adTitle.text = item.title
+                admobNativeAdView.setNativeAd(nativeAd)
 
-                Glide.with(itemView.context)
-                    .load(item.img)
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .into(adImg)
-
+                return
             }
+
+            advertiser.text = item.advertiser
+
+            adTitle.text = item.title
+
+            Glide.with(itemView.context)
+                .load(item.img)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(adImg)
 
         }
 
