@@ -7,7 +7,6 @@ import com.admob.mediation.kotlin.AdData
 import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
-import com.aotter.trek.admob.mediation.android.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobNativeAdScrollViewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
@@ -57,7 +56,7 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/1855351388"
 
-        adLoader = AdLoader.Builder(AdmobApplication.context, adUnit)
+        adLoader = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
 
                 viewBinding.Sponsored.text = nativeAd.advertiser
@@ -101,6 +100,8 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         adRequest = AdRequest
             .Builder()
@@ -115,7 +116,7 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/1855351388"
 
-        adLoader2 = AdLoader.Builder(AdmobApplication.context, adUnit)
+        adLoader2 = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
 
                 viewBinding.Sponsored2.text = nativeAd.advertiser
@@ -160,6 +161,8 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         adRequest2 = AdRequest
             .Builder()

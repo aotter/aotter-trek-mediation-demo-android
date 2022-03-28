@@ -7,7 +7,6 @@ import com.admob.mediation.kotlin.AdData
 import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
-import com.aotter.trek.admob.mediation.android.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobSuprAdScrollViewBinding
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
@@ -35,18 +34,20 @@ class AdmobSuprAdScrollViewActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/4613662079"
 
-        val adLoader = AdLoader.Builder(AdmobApplication.context, adUnit)
+        val adLoader = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
 
                 val adData =
                     nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA) as? AdData
 
                 adData?.let {
+
                     TrekAdmobAdViewBinder.bindingAdView(adData, viewBinding.admobNativeView)
 
                     viewBinding.admobNativeView.mediaView = viewBinding.admobMediaView
 
                     viewBinding.admobNativeView.setNativeAd(nativeAd)
+
                 }
 
 
@@ -74,6 +75,8 @@ class AdmobSuprAdScrollViewActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         val adRequest = AdRequest
             .Builder()
@@ -118,6 +121,8 @@ class AdmobSuprAdScrollViewActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         val adRequest = AdRequest
             .Builder()

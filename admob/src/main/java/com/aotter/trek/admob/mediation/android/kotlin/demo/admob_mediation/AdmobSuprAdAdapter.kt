@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.admob.mediation.kotlin.AdData
 import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
+import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
@@ -34,9 +36,10 @@ class AdmobSuprAdAdapter() : RecyclerView.Adapter<AdmobSuprAdAdapter.ViewHolder>
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (list[position].nativeAd != null && list[position].adData != null) {
+
+        return list[position].nativeAd?.let {
             0
-        } else {
+        } ?: kotlin.run {
             1
         }
 
@@ -86,11 +89,12 @@ class AdmobSuprAdAdapter() : RecyclerView.Adapter<AdmobSuprAdAdapter.ViewHolder>
 
         fun bind(item: LocalAdmobSuprAdData) {
 
-            item.nativeAd?.let {
-                item.adData?.let { adData ->
+            item.nativeAd?.let { nativeAd ->
+                nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA)?.let {
+                    val adData = it as AdData
                     TrekAdmobAdViewBinder.bindingAdView(adData, admobNativeAdView)
                     admobNativeAdView.mediaView = admobMediaview
-                    admobNativeAdView.setNativeAd(it)
+                    admobNativeAdView.setNativeAd(nativeAd)
                 }
             } ?: kotlin.run {
 
