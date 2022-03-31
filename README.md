@@ -1,5 +1,5 @@
 # Mediation Example Demo
-Mediation Exapmle Demo
+Mediation Example Demo
 
 ## Trek AdMob Mediation Example App Demo
 
