@@ -7,9 +7,9 @@ Mediation Example Demo
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
-- 2022/04/15 release - Mediation `4.4.5` (Recommend)
+- 2022/04/15 release - SDK `4.4.5` (Recommend)
      - Optimized implementation
-     - Update custom adapter ( [Migrate to SDK v21](https://developers.google.com/admob/android/migration) )
+     - Update admob mediation custom adapter ( [Migrate to SDK v21](https://developers.google.com/admob/android/migration) )
 - 2022/03/28 release - Mediation `4.4.2`
      - Add `setContentUrl()` & `setContentTitle()`
      - OMSDK obstruction minor adjustment
