@@ -11,7 +11,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AotterTrekAdmobDemo">
+        android:theme="@style/Theme.Treksdkandroidadmobmediationkotlin">
         <activity android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.banner_ad.AdmobBannerAdScrollViewActivity" />
         <activity android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.native_ad.AdmobNativeAdScrollViewActivity" />
         <activity android:name="com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.native_ad.AdmobNativeAdRecyclerViewPageActivity" />

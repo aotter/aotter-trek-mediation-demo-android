@@ -3,8 +3,6 @@ package com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.supr
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.admob.mediation.kotlin.AdData
-import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobSuprAdScrollViewBinding
@@ -37,19 +35,9 @@ class AdmobSuprAdScrollViewActivity : AppCompatActivity() {
         val adLoader = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
 
-                val adData =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA) as? AdData
-
-                adData?.let {
-
-                    TrekAdmobAdViewBinder.bindingAdView(adData, viewBinding.admobNativeView)
-
                     viewBinding.admobNativeView.mediaView = viewBinding.admobMediaView
 
                     viewBinding.admobNativeView.setNativeAd(nativeAd)
-
-                }
-
 
             }
             .withAdListener(object : AdListener() {
@@ -80,7 +68,7 @@ class AdmobSuprAdScrollViewActivity : AppCompatActivity() {
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader.loadAd(adRequest)
@@ -126,11 +114,20 @@ class AdmobSuprAdScrollViewActivity : AppCompatActivity() {
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
 
         adLoader.loadAd(adRequest)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        viewBinding.admobNativeView.destroy()
+
+        viewBinding.admobNativeView2.destroy()
+
     }
 
 }

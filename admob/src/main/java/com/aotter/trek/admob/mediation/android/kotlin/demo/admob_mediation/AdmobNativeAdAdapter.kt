@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
 import com.aotter.trek.admob.mediation.android.kotlin.demo.LocalNativeAdData
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.R
 import com.bumptech.glide.Glide
@@ -35,7 +34,7 @@ class AdmobNativeAdAdapter() : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHol
 
     override fun getItemViewType(position: Int): Int {
 
-        return list[position].adData?.let {
+        return list[position].nativeAd?.let {
             0
         } ?: kotlin.run {
             1
@@ -86,10 +85,21 @@ class AdmobNativeAdAdapter() : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHol
 
         fun bind(item: LocalNativeAdData) {
 
-            admobNativeAdView5?.let { nativeView ->
-                item.adData?.let {
-                    TrekAdmobAdViewBinder.bindingAdView(it, nativeView)
-                }
+            item.nativeAd?.let {
+
+                advertiser?.text = it.advertiser
+
+                adTitle.text = it.headline
+
+                Glide.with(itemView.context)
+                    .load(it.icon?.uri ?: "")
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .into(adImg)
+
+                admobNativeAdView5.setNativeAd(it)
+
+                return
+
             }
 
             advertiser?.text = item.advertiser
@@ -100,6 +110,7 @@ class AdmobNativeAdAdapter() : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHol
                 .load(item.img)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(adImg)
+
 
         }
 

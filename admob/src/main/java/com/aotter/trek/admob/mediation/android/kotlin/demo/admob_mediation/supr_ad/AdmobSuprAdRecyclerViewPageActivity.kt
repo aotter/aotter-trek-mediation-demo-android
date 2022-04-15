@@ -108,7 +108,7 @@ class AdmobSuprAdRecyclerViewPageActivity : AppCompatActivity() {
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader.loadAd(adRequest)
@@ -162,7 +162,7 @@ class AdmobSuprAdRecyclerViewPageActivity : AppCompatActivity() {
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader.loadAd(adRequest)

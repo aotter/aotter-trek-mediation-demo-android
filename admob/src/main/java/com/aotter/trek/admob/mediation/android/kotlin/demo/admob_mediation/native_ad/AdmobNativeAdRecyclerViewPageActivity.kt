@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.admob.mediation.kotlin.AdData
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
 import com.aotter.trek.admob.mediation.android.kotlin.demo.LocalNativeAdData
@@ -72,15 +71,12 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
         val adLoader = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
 
-                val adData =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA) as? AdData
-
                 admobNativeAdAdapter.update(
                     1, LocalNativeAdData(
-                        nativeAd.body,
-                        nativeAd.advertiser,
+                        nativeAd.body ?: "",
+                        nativeAd.advertiser ?: "",
                         nativeAd.icon?.uri.toString(),
-                        adData
+                        nativeAd
                     )
                 )
 
@@ -113,7 +109,7 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader.loadAd(adRequest)
@@ -129,15 +125,12 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
         val adLoader = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
 
-                val adData =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA) as? AdData
-
                 admobNativeAdAdapter.update(
                     5, LocalNativeAdData(
-                        nativeAd.body,
-                        nativeAd.advertiser,
+                        nativeAd.body ?: "",
+                        nativeAd.advertiser ?: "",
                         nativeAd.icon?.uri.toString(),
-                        adData
+                        nativeAd
                     )
                 )
             }
@@ -169,7 +162,7 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader.loadAd(adRequest)

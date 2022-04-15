@@ -55,7 +55,7 @@ class AdmobBannerAdScrollViewActivity : AppCompatActivity() {
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventBanner::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventBanner::class.java, bundle)
             .build()
 
         bannerAdView.loadAd(adRequest)

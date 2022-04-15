@@ -3,8 +3,6 @@ package com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.nati
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.admob.mediation.kotlin.AdData
-import com.admob.mediation.kotlin.TrekAdmobAdViewBinder
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobNativeAdScrollViewBinding
@@ -68,12 +66,13 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(viewBinding.admobAdImg)
 
-                viewBinding.admobNativeAdView.setNativeAd(nativeAd)
+                viewBinding.admobNativeAdView.imageView = viewBinding.admobAdImg
 
-                nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA)?.let {
-                    val adData = it as AdData
-                    TrekAdmobAdViewBinder.bindingAdView(adData, viewBinding.admobNativeAdView)
-                }
+                viewBinding.admobNativeAdView.headlineView = viewBinding.admobAdTitle
+
+                viewBinding.admobNativeAdView.advertiserView = viewBinding.Sponsored
+
+                viewBinding.admobNativeAdView.setNativeAd(nativeAd)
 
 
             }
@@ -105,7 +104,7 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader.loadAd(adRequest)
@@ -130,12 +129,6 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
                 viewBinding.admobNativeAdView2.setNativeAd(nativeAd)
 
-                val adData =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.AD_DATA) as? AdData
-
-                adData?.let {
-                    TrekAdmobAdViewBinder.bindingAdView(it, viewBinding.admobNativeAdView2)
-                }
 
             }
             .withAdListener(object : AdListener() {
@@ -166,10 +159,19 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         adRequest2 = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader2.loadAd(adRequest2)
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        viewBinding.admobNativeAdView.destroy()
+
+        viewBinding.admobNativeAdView2.destroy()
 
     }
 
