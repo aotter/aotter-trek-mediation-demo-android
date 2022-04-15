@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
-import com.aotter.net.dto.trek.response.TrekNativeAd
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.LocalNativeAdData
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.admob_mediation.AdmobNativeAdAdapter
@@ -71,17 +70,14 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/4613662079"
 
-        val adLoader = AdLoader.Builder(AdmobApplication.context, adUnit)
+        val adLoader = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
-
-                val adData =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.TREK_NATIVE_AD) as? TrekNativeAd
 
                 list[4] = LocalNativeAdData(
                     "幸運調色盤：12星座明天穿什麼？（6/6-6/12）",
                     "電獺少女",
                     "http://pnn.aotter.net/Media/show/d8404d54-aab7-4729-8e85-64fb6b92a84e.jpg",
-                    adData
+                    nativeAd
                 )
 
                 loadAdmobNativeAd2()
@@ -110,10 +106,12 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader.loadAd(adRequest)
@@ -125,17 +123,14 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/1855351388"
 
-        val adLoader = AdLoader.Builder(AdmobApplication.context, adUnit)
+        val adLoader = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
-
-                val adData =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.TREK_NATIVE_AD) as? TrekNativeAd
 
                 list[9] = LocalNativeAdData(
                     "幸運調色盤：12星座明天穿什麼？（6/6-6/12）",
                     "電獺少女",
                     "http://pnn.aotter.net/Media/show/d8404d54-aab7-4729-8e85-64fb6b92a84e.jpg",
-                    adData
+                    nativeAd
                 )
 
                 admobNativeAdAdapter.update(list)
@@ -164,10 +159,12 @@ class AdmobNativeAdRecyclerViewPageActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader.loadAd(adRequest)

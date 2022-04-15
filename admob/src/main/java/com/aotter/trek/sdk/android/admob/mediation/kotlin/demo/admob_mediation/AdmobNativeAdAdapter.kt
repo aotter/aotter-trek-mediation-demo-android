@@ -6,14 +6,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.aotter.net.trek.ads.TrekMediaView
-import com.aotter.net.trek.ads.TrekNativeAdView
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.LocalNativeAdData
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.google.android.gms.ads.nativead.MediaView
+import com.google.android.gms.ads.nativead.NativeAdView
 
-class AdmobNativeAdAdapter() : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHolder>() {
+class AdmobNativeAdAdapter : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHolder>() {
 
     private var list = mutableListOf<LocalNativeAdData>()
 
@@ -34,7 +34,7 @@ class AdmobNativeAdAdapter() : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHol
     }
 
     override fun getItemViewType(position: Int): Int {
-        return list[position].trekNativeAd?.let {
+        return list[position].nativeAd?.let {
             0
         } ?: kotlin.run {
             1
@@ -79,41 +79,41 @@ class AdmobNativeAdAdapter() : RecyclerView.Adapter<AdmobNativeAdAdapter.ViewHol
 
         private val adImg = itemView.findViewById<ImageView>(R.id.adImg)
 
-        private val trekNativeAdView =
-            itemView.findViewById<TrekNativeAdView>(R.id.trekNativeAdView)
+        private val nativeAdView =
+            itemView.findViewById<NativeAdView>(R.id.nativeAdView)
 
-        private val trekMediaView =
-            itemView.findViewById<TrekMediaView>(R.id.trekMediaView2)
+        private val mediaView =
+            itemView.findViewById<MediaView>(R.id.trekMediaView2)
 
         fun bind(item: LocalNativeAdData) {
 
-            item.trekNativeAd?.let { trekNativeAd ->
+            item.nativeAd?.let { nativeAd ->
 
-                advertiser.text = trekNativeAd.advertiserName
+                advertiser.text = nativeAd.advertiser
 
-                adTitle.text = trekNativeAd.title
+                adTitle.text = nativeAd.headline
 
                 Glide.with(itemView.context)
-                    .load(trekNativeAd.imgIconHd)
+                    .load(nativeAd.icon?.uri ?: "")
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(adImg)
 
-                trekNativeAdView.setTrekMediaView(trekMediaView)
+                nativeAdView.mediaView = mediaView
 
-                trekNativeAdView.setNativeAd(trekNativeAd)
+                nativeAdView.setNativeAd(nativeAd)
 
-            } ?: kotlin.run {
-
-                advertiser.text = item.advertiser
-
-                adTitle.text = item.title
-
-                Glide.with(itemView.context)
-                    .load(item.img)
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .into(adImg)
+                return
 
             }
+
+            advertiser.text = item.advertiser
+
+            adTitle.text = item.title
+
+            Glide.with(itemView.context)
+                .load(item.img)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(adImg)
 
 
         }

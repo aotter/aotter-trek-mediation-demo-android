@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
-import com.aotter.net.dto.trek.response.TrekNativeAd
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobNativeAdScrollViewBinding
 import com.bumptech.glide.Glide
@@ -50,23 +49,16 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/4613662079"
 
-        adLoader = AdLoader.Builder(AdmobApplication.context, adUnit)
+        adLoader = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
 
-                val trekNativeAd =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.TREK_NATIVE_AD) as? TrekNativeAd
+                viewBinding.advertiser3.text = nativeAd.advertiser
 
-                trekNativeAd?.let {
+                viewBinding.adTitle3.text = nativeAd.headline
 
-                    viewBinding.advertiser4.text = it.advertiserName
+                viewBinding.nativeAdView3.mediaView = viewBinding.mediaView3
 
-                    viewBinding.adTitle4.text = it.title
-
-                    viewBinding.trekNativeAdView3.setTrekMediaView(viewBinding.trekMediaView)
-
-                    viewBinding.trekNativeAdView3.setNativeAd(it)
-
-                }
+                viewBinding.nativeAdView3.setNativeAd(nativeAd)
 
             }
             .withAdListener(object : AdListener() {
@@ -92,10 +84,12 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader.loadAd(adRequest)
@@ -106,26 +100,20 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/1855351388"
 
-        adLoader2 = AdLoader.Builder(AdmobApplication.context, adUnit)
+        adLoader2 = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
 
-                val trekNativeAd =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.TREK_NATIVE_AD) as? TrekNativeAd
+                viewBinding.advertiser2.text = nativeAd.advertiser
 
-                trekNativeAd?.let {
+                viewBinding.adTitle2.text = nativeAd.headline
 
-                    viewBinding.advertiser2.text = it.advertiserName
+                Glide.with(this)
+                    .load(nativeAd.icon?.uri ?: "")
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .into(viewBinding.adImg2)
 
-                    viewBinding.adTitle2.text = it.title
+                viewBinding.nativeAdView2.setNativeAd(nativeAd)
 
-                    Glide.with(this)
-                        .load(it.imgMain)
-                        .transition(DrawableTransitionOptions.withCrossFade())
-                        .into(viewBinding.adImg2)
-
-                    viewBinding.trekNativeAdView.setNativeAd(it)
-
-                }
 
             }
             .withAdListener(object : AdListener() {
@@ -151,10 +139,12 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         adRequest2 = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader2.loadAd(adRequest2)
@@ -165,26 +155,24 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
 
         val adUnit = "ca-app-pub-8836593984677243/1855351388"
 
-        adLoader3 = AdLoader.Builder(AdmobApplication.context, adUnit)
+        adLoader3 = AdLoader.Builder(this, adUnit)
             .forNativeAd { nativeAd ->
 
-                val trekNativeAd =
-                    nativeAd.extras.getSerializable(TrekAdmobDataKey.TREK_NATIVE_AD) as? TrekNativeAd
+                viewBinding.advertiser.text = nativeAd.advertiser
 
-                trekNativeAd?.let {
+                viewBinding.adTitle.text = nativeAd.headline
 
-                    viewBinding.advertiser3.text = it.advertiserName
+                val mainImg = nativeAd.extras.getString(TrekAdmobDataKey.MAIN_IMAGE)
+                    ?: nativeAd.mediaContent?.mainImage
 
-                    viewBinding.adTitle3.text = it.title
+                Glide.with(this)
+                    .load(mainImg)
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .into(viewBinding.adImg)
 
-                    Glide.with(this)
-                        .load(it.imgMain)
-                        .transition(DrawableTransitionOptions.withCrossFade())
-                        .into(viewBinding.adImg3)
+                viewBinding.nativeAdView.imageView = viewBinding.adImg
 
-                    viewBinding.trekNativeAdView2.setNativeAd(it)
-
-                }
+                viewBinding.nativeAdView.setNativeAd(nativeAd)
 
             }
             .withAdListener(object : AdListener() {
@@ -210,13 +198,26 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         adRequest3 = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventNative::class.java, bundle)
             .build()
 
         adLoader3.loadAd(adRequest3)
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        viewBinding.nativeAdView.destroy()
+
+        viewBinding.nativeAdView2.destroy()
+
+        viewBinding.nativeAdView3.destroy()
 
     }
 

@@ -28,117 +28,113 @@
                 android:background="@drawable/ic_launcher_background"
                 android:scaleType="centerCrop" />
 
-            <ImageView
-                android:id="@+id/imageView3"
+            <com.google.android.gms.ads.nativead.NativeAdView
+                android:id="@+id/nativeAdView3"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@drawable/ic_launcher_background"
-                android:scaleType="centerCrop" />
+                android:layout_height="wrap_content">
 
-            <com.aotter.net.trek.ads.TrekNativeAdView
-                android:id="@+id/trekNativeAdView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.aotter.net.trek.ads.TrekMediaView
-                    android:id="@+id/trekMediaView"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/advertiser4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Sponsored"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/trekMediaView" />
+                    <com.google.android.gms.ads.nativead.MediaView
+                        android:id="@+id/mediaView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/adTitle4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="TextView"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/advertiser4"
-                    app:layout_constraintTop_toBottomOf="@+id/advertiser4" />
+                    </com.google.android.gms.ads.nativead.MediaView>
 
-            </com.aotter.net.trek.ads.TrekNativeAdView>
+                    <TextView
+                        android:id="@+id/advertiser3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Sponsored"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mediaView3" />
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@drawable/ic_launcher_background"
-                android:scaleType="centerCrop" />
+                    <TextView
+                        android:id="@+id/adTitle3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="TextView"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/advertiser3"
+                        app:layout_constraintTop_toBottomOf="@+id/advertiser3" />
+
+                </LinearLayout>
+
+            </com.google.android.gms.ads.nativead.NativeAdView>
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="match_parent"
-                android:layout_height="1000dp"
+                android:layout_height="800dp"
                 android:background="@drawable/ic_launcher_background"
                 android:scaleType="centerCrop" />
 
-            <com.aotter.net.trek.ads.TrekNativeAdView
-                android:id="@+id/trekNativeAdView"
+            <com.google.android.gms.ads.nativead.NativeAdView
+                android:id="@+id/nativeAdView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/advertiser2"
-                    android:layout_width="0dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="Sponsored"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/adTitle2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintEnd_toStartOf="@+id/adImg"
+                    app:layout_constraintStart_toStartOf="@+id/adImg">
 
-                <TextView
-                    android:id="@+id/adTitle2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="TextView"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    <ImageView
+                        android:id="@+id/adImg"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@color/purple_200"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toTopOf="@+id/advertiser"
+                        app:layout_constraintDimensionRatio="16:10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/adImg2"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/purple_200"
-                    android:scaleType="fitXY"
-                    app:layout_constraintBottom_toTopOf="@+id/advertiser2"
-                    app:layout_constraintDimensionRatio="16:9"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/advertiser"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Sponsored"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/adTitle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-            </com.aotter.net.trek.ads.TrekNativeAdView>
+                    <TextView
+                        android:id="@+id/adTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.gms.ads.nativead.NativeAdView>
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -147,54 +143,58 @@
                 android:background="@drawable/ic_launcher_background"
                 android:scaleType="centerCrop" />
 
-            <com.aotter.net.trek.ads.TrekNativeAdView
-                android:id="@+id/trekNativeAdView2"
+            <com.google.android.gms.ads.nativead.NativeAdView
+                android:id="@+id/nativeAdView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/advertiser3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Sponsored"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/adImg3"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/adTitle3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="TextView"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/advertiser3"
-                    app:layout_constraintTop_toBottomOf="@+id/advertiser3" />
+                    <ImageView
+                        android:id="@+id/adImg2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@color/purple_200"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/adImg3"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/purple_200"
-                    android:scaleType="fitXY"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio=""
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/adTitle2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="TextView"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/advertiser2"
+                        app:layout_constraintTop_toBottomOf="@+id/advertiser2" />
 
-            </com.aotter.net.trek.ads.TrekNativeAdView>
+                    <TextView
+                        android:id="@+id/advertiser2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Sponsored"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/adImg2"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.gms.ads.nativead.NativeAdView>
 
         </LinearLayout>
     </ScrollView>

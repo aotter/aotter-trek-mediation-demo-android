@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun initView() {
+    private fun initView(){
 
         viewBinding.admobNativeAdScrollPageBtn.setOnClickListener {
             val intent = Intent()
@@ -53,6 +53,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 
 
 }

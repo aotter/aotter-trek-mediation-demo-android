@@ -44,10 +44,12 @@ class AdmobBannerAdScrollViewActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         bundle.putString(TrekAdmobDataKey.CATEGORY, "news")
+        bundle.putString(TrekAdmobDataKey.CONTENT_URL, "https://agirls.aotter.net/")
+        bundle.putString(TrekAdmobDataKey.CONTENT_TITLE, "電獺少女")
 
         val adRequest = AdRequest
             .Builder()
-            .addCustomEventExtrasBundle(TrekAdmobCustomEventBanner::class.java, bundle)
+            .addNetworkExtrasBundle(TrekAdmobCustomEventBanner::class.java, bundle)
             .build()
 
         viewBinding.bannerAdView.loadAd(adRequest)
