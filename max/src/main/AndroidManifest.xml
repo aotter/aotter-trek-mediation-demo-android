@@ -25,7 +25,7 @@
 
         <meta-data
             android:name="applovin.sdk.key"
-            android:value="ZUM9EwToK97sSTedB1ZL9_N6n4IFsoJieiBTMnKRBiTfOVeSM3Lt4_Uf7DazNM5DW-8p78RkEBzuiMLyND-x8i" />
+            android:value="UHMIs5HKBAm1I_J2Ii11mRdSBU9BPoz7tADXqa7KBKSdD7NO_vC4ZPiO_z2sXeygrA-vDi1uGQ4lxRVx3Jz3FK" />
 
         <activity
             android:name=".MainActivity"

@@ -46,10 +46,10 @@ class NativeAdScrollViewActivity : AppCompatActivity() {
         val maxNativeAdView: MaxNativeAdView
 
         if (count % 2 == 0) {
-            adUnitId = "7d2567538a1583dd"
+            adUnitId = "6613955fad1eccf4"
             maxNativeAdView = AdViewCreator.createNativeAdView(this)
         } else {
-            adUnitId = "b5d5b987941bf502"
+            adUnitId = "53831544cf583e83"
             maxNativeAdView = AdViewCreator.createNativeAdView2(this)
         }
 
