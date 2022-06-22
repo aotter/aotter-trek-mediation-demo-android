@@ -7,6 +7,12 @@ Mediation Example Demo
 https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 
 ### Trek AdMob Mediation release change log
+- 2022/06/22 release - SDK `4.5.0` (Recommend)
+     - new TrekNativeAdImage 
+     - Open browser with chrome
+     - imp tool optimization
+     - TrekMediaView optimization
+     - Log optimization
 - 2022/04/15 release - SDK `4.4.5` (Recommend)
      - Optimized implementation
      - The TrekAdmobAdViewBinder class has been removed, and the admob mediation binding view flow has been integrated into the mediation adapter.
