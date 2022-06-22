@@ -14,7 +14,7 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
      - imp tool optimization
      - TrekMediaView optimization
      - Log optimization
-- 2022/04/15 release - SDK `4.4.5` (Recommend)
+- 2022/04/15 release - SDK `4.4.5`
      - Optimized implementation
      - The TrekAdmobAdViewBinder class has been removed, and the admob mediation binding view flow has been integrated into the mediation adapter.
      - Update admob mediation custom adapter ( [Migrate to SDK v21](https://developers.google.com/admob/android/migration) )
