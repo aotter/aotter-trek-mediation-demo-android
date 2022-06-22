@@ -9,6 +9,7 @@ https://trek.gitbook.io/aottertrek-sdk-doc/android/admob-mediation
 ### Trek AdMob Mediation release change log
 - 2022/06/22 release - SDK `4.5.0` (Recommend)
      - new TrekNativeAdImage 
+     - Support vertical slide
      - Open browser with chrome
      - imp tool optimization
      - TrekMediaView optimization
