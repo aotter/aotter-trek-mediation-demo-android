@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.aotter.trek.admob.mediation.android.kotlin.demo.admob_mediation.banner_ad.AdmobBannerAdScrollViewActivity">
+    tools:context=".admob_mediation.banner_ad.AdmobBannerAdScrollViewActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
