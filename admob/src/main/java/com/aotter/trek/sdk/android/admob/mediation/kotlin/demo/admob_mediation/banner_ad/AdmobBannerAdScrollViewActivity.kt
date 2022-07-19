@@ -31,13 +31,13 @@ class AdmobBannerAdScrollViewActivity : AppCompatActivity() {
             override fun onAdLoaded() {
                 super.onAdLoaded()
 
-                Log.e("Banner Ad", "onAdLoaded")
+                Log.i("Banner Ad", "onAdLoaded")
 
             }
 
             override fun onAdFailedToLoad(p0: LoadAdError) {
                 super.onAdFailedToLoad(p0)
-                Log.e("Banner Ad", p0.message)
+                Log.i("Banner Ad", p0.message)
             }
         }
 

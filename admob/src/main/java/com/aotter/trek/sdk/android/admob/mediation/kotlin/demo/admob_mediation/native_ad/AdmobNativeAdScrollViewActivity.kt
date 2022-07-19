@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.admob.mediation.kotlin.TrekAdmobDataKey
 import com.admob.mediation.kotlin.ads.TrekAdmobCustomEventNative
-import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.AdmobApplication
 import com.aotter.trek.sdk.android.admob.mediation.kotlin.demo.databinding.ActivityAdmobNativeAdScrollViewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
@@ -64,19 +63,19 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
             .withAdListener(object : AdListener() {
                 override fun onAdClicked() {
                     super.onAdClicked()
-                    Log.e("adLoader", "onAdClicked")
+                    Log.i("adLoader", "onAdClicked")
                 }
 
                 override fun onAdImpression() {
                     super.onAdImpression()
 
-                    Log.e("adLoader", "onAdImpression")
+                    Log.i("adLoader", "onAdImpression")
 
                 }
 
                 override fun onAdLoaded() {
                     super.onAdLoaded()
-                    Log.e("adLoader", "onAdLoaded")
+                    Log.i("adLoader", "onAdLoaded")
                 }
             })
             .build()
@@ -119,19 +118,19 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
             .withAdListener(object : AdListener() {
                 override fun onAdClicked() {
                     super.onAdClicked()
-                    Log.e("adLoader", "onAdClicked2")
+                    Log.i("adLoader", "onAdClicked2")
                 }
 
                 override fun onAdImpression() {
                     super.onAdImpression()
 
-                    Log.e("adLoader", "onAdImpression2")
+                    Log.i("adLoader", "onAdImpression2")
 
                 }
 
                 override fun onAdLoaded() {
                     super.onAdLoaded()
-                    Log.e("adLoader", "onAdLoaded2")
+                    Log.i("adLoader", "onAdLoaded2")
                 }
             })
             .build()
@@ -178,19 +177,19 @@ class AdmobNativeAdScrollViewActivity : AppCompatActivity() {
             .withAdListener(object : AdListener() {
                 override fun onAdClicked() {
                     super.onAdClicked()
-                    Log.e("adLoader", "onAdClicked2")
+                    Log.i("adLoader", "onAdClicked2")
                 }
 
                 override fun onAdImpression() {
                     super.onAdImpression()
 
-                    Log.e("adLoader", "onAdImpression2")
+                    Log.i("adLoader", "onAdImpression2")
 
                 }
 
                 override fun onAdLoaded() {
                     super.onAdLoaded()
-                    Log.e("adLoader", "onAdLoaded2")
+                    Log.i("adLoader", "onAdLoaded2")
                 }
             })
             .build()
