@@ -49,7 +49,7 @@ dependencies {
 
     implementation 'com.applovin:applovin-sdk:11.4.4'
 
-    implementation 'com.aotter.android:trek-max-mediation:4.7.2'
+    implementation 'com.aotter.android:trek-max-mediation:5.4.5_beta'
     
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
