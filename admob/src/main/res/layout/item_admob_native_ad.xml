@@ -38,10 +38,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/adImg"
-                app:layout_constraintTop_toBottomOf="@+id/trekMediaView2" />
+                app:layout_constraintTop_toBottomOf="@+id/mediaView" />
 
             <TextView
-                android:id="@+id/adTitle"
+                android:id="@+id/adBody"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -53,9 +53,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/advertiser" />
 
             <com.google.android.gms.ads.nativead.MediaView
-                android:id="@+id/trekMediaView2"
+                android:id="@+id/mediaView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="16:9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +73,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/trekMediaView2" />
+                app:layout_constraintTop_toBottomOf="@+id/mediaView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.gms.ads.nativead.NativeAdView>
