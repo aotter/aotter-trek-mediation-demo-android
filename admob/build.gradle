@@ -49,7 +49,7 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-ads:21.1.0'
 
-    implementation 'com.aotter.android:trek-admob-mediation:5.4.5_beta'
+    implementation 'com.aotter.android:trek-admob-mediation:5.4.7_beta'
     
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
